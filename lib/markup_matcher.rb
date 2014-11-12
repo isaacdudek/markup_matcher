@@ -1,5 +1,4 @@
-require "markup_matcher/version"
+require 'markup_matcher/version'
 
 module MarkupMatcher
-  # Your code goes here...
 end

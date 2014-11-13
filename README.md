@@ -1,5 +1,7 @@
 # MarkupMatcher
 
+[![Circle CI](https://circleci.com/gh/isaacdudek/markup_matcher.png?style=badge&circle-token=6b4dd523d59385c4c0077a5032a7d482fb6d0846)](https://circleci.com/gh/isaacdudek/markup_matcher)
+
 TODO: Write a gem description
 
 ## Installation

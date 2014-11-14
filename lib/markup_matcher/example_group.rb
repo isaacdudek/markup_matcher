@@ -33,9 +33,9 @@ module MarkupMatcher
       failure_message do
         if @expected_well_formed
           message = <<-MESSAGE
-              .   expected:\n#{@actual_parsed.to_xml.indent 29}
+                  expected:\n#{@actual_parsed.to_xml.indent 29}
 
-              .   to match:\n#{@expected_parsed.to_xml.indent 29}
+                  to match:\n#{@expected_parsed.to_xml.indent 29}
           MESSAGE
 
           if options_for_failure_message.present?
@@ -61,7 +61,7 @@ module MarkupMatcher
 
       failure_message_when_negated do
         message = <<-MESSAGE
-            .   expected:\n#{@actual_parsed.to_xml.indent 27}
+                expected:\n#{@actual_parsed.to_xml.indent 27}
 
             to not match:\n#{@expected_parsed.to_xml.indent 27}
         MESSAGE

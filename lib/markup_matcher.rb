@@ -1,5 +1,6 @@
 require 'nokogiri'
 
+require 'markup_matcher/example_group'
 require 'markup_matcher/nokogiri/xml/attr_match'
 require 'markup_matcher/nokogiri/xml/element_match'
 require 'markup_matcher/nokogiri/xml/text_match'

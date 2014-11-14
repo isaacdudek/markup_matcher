@@ -43,11 +43,13 @@ module MarkupMatcher
 
     matcher :match do |expected|
       match do |actual|
+        @options ||= {}
+
         case actual
         when ::Nokogiri::XML::Attr
           actual.match? expected
         when ::Nokogiri::XML::Element
-          actual.match? expected, @options.presence || {}
+          actual.match? expected, @options
         when ::Nokogiri::XML::Text
           actual.match? expected
         end
@@ -92,7 +94,7 @@ module MarkupMatcher
       end
 
       def options_for_failure_message
-        @options_for_failure_message ||= (@options.presence || {}).select do |_, value|
+        @options_for_failure_message ||= @options.select do |_, value|
           value.present?
         end
       end

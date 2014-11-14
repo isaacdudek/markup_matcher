@@ -8,7 +8,9 @@ module MarkupMatcher
 
     matcher :match_markup do |expected|
       match do |actual|
-        @options = (@options.presence || {}).reverse_merge!(
+        @options ||= {}
+
+        @options.reverse_merge!(
           allow_extra_attributes: true,
           allow_extra_children: true
         )
@@ -21,7 +23,7 @@ module MarkupMatcher
 
         @expected_well_formed = standardize(@expected_raw) == standardize(@expected_parsed.to_xml)
 
-        @expected_well_formed && @actual_parsed.match?(@expected_parsed, @options.presence || {})
+        @expected_well_formed && @actual_parsed.match?(@expected_parsed, @options)
       end
 
       chain :with_options do |options|
@@ -85,7 +87,7 @@ module MarkupMatcher
       end
 
       def options_for_failure_message
-        @options_for_failure_message ||= (@options.presence || {}).select do |_, value|
+        @options_for_failure_message ||= @options.select do |_, value|
           value.present?
         end
       end

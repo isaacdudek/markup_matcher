@@ -15,6 +15,10 @@ module MarkupMatcher
       end
     end
 
+    def text(content)
+      ::Nokogiri::XML::Text.new content, document
+    end
+
     matcher :match do |expected|
       match do |actual|
         actual.match? expected

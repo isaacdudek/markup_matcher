@@ -1,3 +1,7 @@
 dependencies:
   pre:
     - gem install bundler --version 1.7.6
+general:
+  branches:
+    ignore:
+      - documentation
